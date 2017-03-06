@@ -1,1 +1,0 @@
-../powerLawVFTThermos.C

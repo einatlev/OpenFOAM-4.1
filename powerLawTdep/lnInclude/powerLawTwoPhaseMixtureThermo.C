@@ -1,1 +1,0 @@
-../powerLawTwoPhaseMixtureThermo/powerLawTwoPhaseMixtureThermo.C

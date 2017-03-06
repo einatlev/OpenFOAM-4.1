@@ -1,3 +1,0 @@
-./tdepHBThermos.C
-
-LIB = $(FOAM_USER_LIBBIN)/libtdepHBThermo

@@ -1,3 +1,0 @@
-./powerLawVFTThermos.C
-
-LIB = $(FOAM_USER_LIBBIN)/libpowerLawVFTThermo

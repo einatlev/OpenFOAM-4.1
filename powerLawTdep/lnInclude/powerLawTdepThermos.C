@@ -1,1 +1,0 @@
-../powerLawTdepThermos.C
