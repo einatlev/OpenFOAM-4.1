@@ -61,7 +61,7 @@ inline Foam::powerLawTdepTransport<Thermo>::powerLawTdepTransport
     n2_(n2)
 {}
 
-
+/*
 template<class Thermo>
 inline Foam::powerLawTdepTransport<Thermo>::powerLawTdepTransport
 (
@@ -74,7 +74,7 @@ inline Foam::powerLawTdepTransport<Thermo>::powerLawTdepTransport
 {
     calcCoeffs(mu1, T1, mu2, T2);
 }
-
+*/
 
 template<class Thermo>
 inline Foam::powerLawTdepTransport<Thermo>::powerLawTdepTransport
@@ -136,12 +136,12 @@ template<class Thermo>
 inline Foam::scalar Foam::powerLawTdepTransport<Thermo>::mu
 (
     const scalar p,
-    const scalar T,
-    const volVectorField& U //added U
+    const scalar T
+    //const volVectorField& U //added U
 ) const
 {
     // This the mu calculation
-    tmp<volScalarField> sr(strainRate());
+   // tmp<volScalarField> sr(strainRate());
 
     scalar Kvalue_ = K1_ + K2_ * T; 
     scalar nvalue_ = n1_ + n2_ * T;
@@ -151,8 +151,10 @@ inline Foam::scalar Foam::powerLawTdepTransport<Thermo>::mu
 	min
         (    
              10000000000,
-             (Kvalue_*pow(sr(), (nValue_-1)))
+	     Kvalue_ * nvalue_
+             /*(Kvalue_*pow(sr(), (nValue_-1)))
 	      /(max(sr(), dimensionedScalar ("VSMALL", dimless/dimTime, VSMALL)))
+		*/
         )
     );
 

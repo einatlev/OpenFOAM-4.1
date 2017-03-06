@@ -129,14 +129,14 @@ public:
             const scalar n2
         );
 
-        //- Construct from two viscosities
+/*        //- Construct from two viscosities
         inline powerLawTdepTransport
         (
             const Thermo& t,
             const scalar mu1, const scalar T1,
             const scalar mu2, const scalar T2
         );
-
+*/
         //- Construct as named copy
         inline powerLawTdepTransport(const word&, const powerLawTdepTransport&);
 
@@ -165,7 +165,7 @@ public:
         }
 
         //- Dynamic viscosity [kg/ms]
-        inline scalar mu(const scalar p, const scalar T, const volVectorField U) const;
+        inline scalar mu(const scalar p, const scalar T) const;
 
         //- Thermal conductivity [W/mK]
         inline scalar kappa(const scalar p, const scalar T) const;
